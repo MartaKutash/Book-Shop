@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+	background-color: grey;
+}
+
+.first {
+	margin-left: 500px;
+	font-size: 32px;
+	font-weight: 700px;
+}
+
+img {
+	border: 1px solid orange;
+}
+
+hr {
+	border: 1px solid orange;
+}
+
+.orderbox {
+	width: 450px;
+	height: 450px;
+	margin-left: 800px;
+	margin-top: -440px;
+}
+
+.order {
+	font-size: 24px;
+	margin-left: 200px;
+}
+
+.whatordered {
+	border: 2px solid green;
+	width: 250px;
+	height: 250px;
+	margin-left: 130px;
+}
+
+.makeorder {
+	height: 50px;
+	margin-left: 190px;
+}
