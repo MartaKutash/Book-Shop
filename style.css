@@ -3,14 +3,22 @@
 	background-color: grey;
 }
 
+.wrapper {
+	max-width: 1160px;
+	min-width: 100%;
+	background-color: bisque;
+}
+
 .first {
-	margin-left: 500px;
+	margin-left: 450px;
 	font-size: 32px;
-	font-weight: 700px;
+	font-weight: bold;
+	/*text-shadow: deeppink  1px 0 10px;*/
 }
 
 img {
 	border: 1px solid orange;
+	width: 500px;
 }
 
 hr {
@@ -20,13 +28,15 @@ hr {
 .orderbox {
 	width: 450px;
 	height: 450px;
-	margin-left: 800px;
-	margin-top: -440px;
+	margin-left: 450px;
+	margin-top: -350px;
 }
 
 .order {
 	font-size: 24px;
 	margin-left: 200px;
+	font-style: oblique;
+	font-weight: bold;
 }
 
 .whatordered {
@@ -36,7 +46,153 @@ hr {
 	margin-left: 130px;
 }
 
-.makeorder {
+#submit {
 	height: 50px;
 	margin-left: 190px;
+	color: white;
+	background-color: blue;
+	border-radius: 50px;
+	width: 150px;
+	height: 50px;
+	font-size: 16px;
 }
+
+#book_list {
+	width: 1100px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.book-self {
+	width: 500px;
+	height: 500px;
+	padding-left: 100px;
+}
+
+.author-self {
+	font-size: 24px;
+	font-weight: bold;
+	width: 350px;
+}
+
+.title-self {
+	font-size: 16px;
+	font-weight: bold;
+	width: 350px;
+}
+
+.img-self {
+	width: 200px;
+}
+
+.description-popup {
+	font-size: 14px;
+	margin-top: 5px;
+	padding: 5px;
+	width: 350px;
+}
+
+.self-price {
+	font-size: 14px;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+form {
+	margin-left: 520px;
+	margin-top: -2950px;
+}
+
+.form_title {
+	margin-bottom: 10px;
+	margin-left: 520px;
+}
+
+.input_forms {
+	display: block;
+	margin-bottom: 50px;
+	width: 700px;
+	clear: both;
+	text-align: right;
+}
+
+input {
+	margin-left: 20px;
+	margin-bottom: 5px;
+}
+
+.inputfield {
+	margin-top: 40px;
+	margin-left: 30px;
+}
+
+.btn {
+	background-color: blue;
+	color: white;
+	border-radius: 50px;
+	width: 130px;
+	height: 50px;
+}
+
+.input_group {
+	display: inline;
+}
+
+.radios {
+	margin-left:  500px;
+}
+
+.type_radio {
+	margin-left: -100px;
+}
+
+.close-popup {
+	height: 50px;
+	width: 50px;
+	border: none;
+	position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.popup__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(5, 53, 61, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s all;
+}
+
+.popup__bg.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.5s all;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgb(254, 255, 170);
+    width: 300px;
+	height: 300px;
+    padding: 25px;
+    transition: 0.5s all;
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+    transition: 0.5s all;
+}
+
+
+
