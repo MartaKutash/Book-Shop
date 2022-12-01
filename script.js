@@ -58,7 +58,7 @@ fetch('books.json') //path to the file with json data
             let author = document.createElement("div");
             author.textContent = data[key].author;
 			author.setAttribute('class', 'author-self')
-            bookItem.appendChild(author)
+            bookItem.appendChild(author);
 			let image = document.createElement("img");
 			image.setAttribute('class', 'img-self' )
             image.src = data[key].imageLink;
@@ -72,10 +72,26 @@ fetch('books.json') //path to the file with json data
             price.textContent = "Price: " + data[key].price;
 			price.setAttribute('class', 'self-price')
             bookItem.appendChild(price);
-			let description = document.createElement("div");
+            //pop-up
+            let newlink = document.createElement('button');
+            newlink.innerHTML = "Show more";
+            newlink.setAttribute( 'class', 'open-popup');
+            bookItem.appendChild(newlink);
+            let popup_bg = document.createElement("div");
+            popup_bg.setAttribute('class', 'popup_bg');
+            newlink.appendChild(popup_bg);
+            let popup = document.createElement("div");
+            popup.setAttribute('class', 'popup');
+            popup_bg.appendChild(popup);
+            let close_popup = document.createElement("img");
+            close_popup.setAttribute("class", "close-popup");
+            close_popup.src = "/img/icon.png";
+            popup.appendChild(close_popup);
+            /*let description = document.createElement("div");
 			description.setAttribute('class', 'description-popup')
 			description.textContent = "Description: " + data[key].description;
-			bookItem.appendChild(description);
+			bookItem.appendChild(description);*/
+
         }
 });
 
@@ -95,13 +111,16 @@ let close_popup = document.createElement("img");
 close_popup.setAttribute("class", "close-popup");
 close_popup.src = "/img/icon.png";
 popup.appendChild(close_popup);
+let desc = document.createElement("div");
+desc.textContent = "You Don't Know JS Yet: Get Started<br>It seems like there's never been as much widespread desire before for a better way to deeply learn the fundamentals of JavaScript. But with a million blogs, books, and videos out there, just where do you START? Look no further!";
+popup.appendChild(desc);
 
 
 
-let popupBg = document.querySelector('popup_bg');
-let popup1 = document.querySelector('popup');
-let openPopupButtons = document.querySelectorAll('open-popup');
-let closePopupButton = document.querySelector('close-popup');
+let popupBg = document.querySelector('.popup_bg');
+let popup1 = document.querySelector('.popup');
+let openPopupButtons = document.querySelectorAll('.open-popup');
+let closePopupButton = document.querySelector('.close-popup');
 
 openPopupButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -111,7 +130,8 @@ openPopupButtons.forEach((button) => {
     })
 });
 
-closePopupButton.addEventListener('click',() => {
+closePopupButton.addEventListener('click',(e) => {
+    e.stopPropagation()
     popupBg.classList.remove('active');
     popup1.classList.remove('active');
 });
@@ -122,7 +142,6 @@ document.addEventListener('click', (e) => {
         popup.classList.remove('active');
     }
 });
-
 
 
 
