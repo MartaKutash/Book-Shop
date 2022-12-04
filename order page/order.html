@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./style-order.css">
+<body>
+		<div class="form_title"><strong>Delivery Form</strong></div>
+		<div class="input_forms">
+			<div class="input_field">
+				<label>Name: </label>
+				<input type="text" class="input invalid" minlength="4" class="input" placeholder=" " required>
+			</div>
+			<div class="input_field">
+				<label>Surname: </label>
+				<input type="text" minlength="5" class="input" placeholder=" " required>
+			</div>
+			<div class="input_field">
+				<label>Delivery Date:</label>
+				<input type="date" class="input" min="2022-11-29" placeholder=" " required>
+			</div>
+			<div class="input_field">
+				<label>Street: </label>
+				<input type="text" minlength="5" class="input" placeholder=" " required>
+			</div>
+			<div class="input_field">
+				<label>House number: </label>
+				<input type="number" min="1" class="input" placeholder=" " required>
+			</div>
+			<div class="input_field">
+				<label>Flat number: </label>
+				<input type="number" min="1" class="input" placeholder=" " pattern="^[0-9,-]" required>
+			</div>
+			</div>
+			<div class="radios">
+			<div class="type_radio"><p>Choose the payment type:</p>
+				<div class="input_group">
+					<input type="radio" id="cash" name="payment">
+					<label class="payment_radio_label" for="cash">Cash</label>
+				</div>
+				<div class="input_group">
+					<input type="radio" id="card" name="payment" checked="">
+					<label class="payment_radio_label" for="card">Card</label>
+				</div>
+			</div>
+			<div class="type_radio"><p>Choose the gift:</p>
+				<div class="input_group">
+					<input type="radio" id="pack" name="gift">
+					<label class="gift_radio_label" for="pack">Pack as a gift</label>
+				</div>
+				<div class="input_group">
+					<input type="radio" id="discount" name="gift" checked="">
+					<label class="gift_radio_label" for="discount">Provide 2% discount to the next time</label>
+				</div>
+			</div>
+			<div class="inputfield">
+				<input type="submit" value="Complete" class="btn">
+			</div>
+		</div>
+</body>
+</html>

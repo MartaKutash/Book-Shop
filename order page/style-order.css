@@ -1,0 +1,61 @@
+* {
+	box-sizing: border-box;
+	background-color: gray;
+}
+
+form {
+	margin-left: 520px;
+	margin-top: -2950px;
+}
+
+.form_title {
+	margin-bottom: 10px;
+	margin-left: 520px;
+}
+
+.input_forms {
+	display: block;
+	margin-bottom: 50px;
+	width: 700px;
+	clear: both;
+	text-align: right;
+}
+
+input {
+	margin-left: 20px;
+	margin-bottom: 5px;
+}
+
+.input:valid:not(:placeholder-shown) {
+	border-color: black;
+}
+
+.input:invalid:not(:placeholder-shown) {
+	border-color: red;
+}
+
+.btn {
+	position: absolute;
+	background-color: rgb(7, 194, 178);
+	color: white;
+	border-radius: 50px;
+	width: 130px;
+	height: 50px;
+	margin-top: 10px;
+}
+
+.input_group {
+	display: inline;
+}
+
+.radios {
+	margin-left:  500px;
+}
+
+.type_radio {
+	margin-left: -100px;
+}
+
+.inputfield {
+	margin-top: 50px;
+}

@@ -11,9 +11,10 @@ let line = document.createElement('hr');
 body.appendChild(line);
 
 //body.getElementsByClassName('first')[0].style = "margin-left: 600px; font-size: 24px; font-style: bold";
-let img = document.createElement('img');
-img.src = "/img/pexels-pixabay-159711.jpg";
-body.appendChild(img);
+let img1 = document.createElement('img');
+img1.setAttribute('class', 'book_img');
+img1.src = "/img/pexels-pixabay-159711.jpg";
+body.appendChild(img1);
 
 
 let orderFormBox = document.createElement('div');
@@ -24,6 +25,26 @@ let orderForm = document.createElement('p');
 orderForm.setAttribute('class', 'order');
 orderFormBox.appendChild(orderForm);
 orderForm.innerText = "Your Purchase";
+
+let delete_item_button = document.createElement('button');
+delete_item_button.setAttribute('class', 'delete_item');
+delete_item_button.textContent = "x";
+orderForm.appendChild(delete_item_button);
+
+let plus_item_button = document.createElement('button');
+plus_item_button.setAttribute('class', 'plus_button');
+plus_item_button.textContent = "+";
+orderForm.appendChild(plus_item_button);
+
+let minus_item_button = document.createElement('button');
+minus_item_button.setAttribute('class', 'minus_button');
+minus_item_button.textContent = "-";
+orderForm.appendChild(minus_item_button);
+
+let bag = document.createElement('array');
+bag.setAttribute('id', 'bag');
+bag.textContent = "jhgjh";
+orderForm.appendChild(bag);
 
 
 let boxWithOrder = document.createElement('div');
@@ -36,7 +57,7 @@ butt.innerText = "Make an order";
 butt.setAttribute('id', 'submit');
 
 butt.onclick = function () {
-	alert('Please, fill the delivery form =>');
+	window.location = "./order page/order.html";
 }
 orderFormBox.appendChild(butt);
 
@@ -65,83 +86,73 @@ fetch('books.json') //path to the file with json data
             bookItem.appendChild(image)
             let title = document.createElement("div");
 			title.setAttribute('class', 'title-self')
-            title.textContent = "Title: " + data[key].title;
+            title.textContent = data[key].title;
             bookItem.appendChild(title);
             listOfBooks.appendChild(bookItem);
 			let price = document.createElement("div");
             price.textContent = "Price: " + data[key].price;
 			price.setAttribute('class', 'self-price')
             bookItem.appendChild(price);
-            //pop-up
-            let newlink = document.createElement('button');
-            newlink.innerHTML = "Show more";
-            newlink.setAttribute( 'class', 'open-popup');
-            bookItem.appendChild(newlink);
-            let popup_bg = document.createElement("div");
-            popup_bg.setAttribute('class', 'popup_bg');
-            newlink.appendChild(popup_bg);
-            let popup = document.createElement("div");
-            popup.setAttribute('class', 'popup');
-            popup_bg.appendChild(popup);
-            let close_popup = document.createElement("img");
-            close_popup.setAttribute("class", "close-popup");
-            close_popup.src = "/img/icon.png";
-            popup.appendChild(close_popup);
-            /*let description = document.createElement("div");
-			description.setAttribute('class', 'description-popup')
-			description.textContent = "Description: " + data[key].description;
-			bookItem.appendChild(description);*/
+            bookItem.appendChild(showMoreBtn('show-more-btn-'+ key, data[key].description, data[key].title))
+            let add_to_bag = document.createElement('button');
+            add_to_bag.setAttribute('id', 'add-to-bag');
+            add_to_bag.textContent = "Add to bag";
+            bookItem.appendChild(add_to_bag);
+            add_to_bag.onclick = function () {
+                ;
+            }
 
         }
 });
 
+function showMoreBtn(id, description, title) {
+    let showMoreBtn = document.createElement('button')
+    showMoreBtn.classList.add('show-more-open')
+    showMoreBtn.innerText = 'Show more'
 
-// С этой строки я пыталась сделать pop-up по макету
-let newlink = document.createElement('button');
-newlink.innerHTML = "Show more";
-newlink.setAttribute( 'class', 'open-popup');
-document.body.appendChild(newlink);
-let popup_bg = document.createElement("div");
-popup_bg.setAttribute('class', 'popup_bg');
-newlink.appendChild(popup_bg);
-let popup = document.createElement("div");
-popup.setAttribute('class', 'popup');
-popup_bg.appendChild(popup);
-let close_popup = document.createElement("img");
-close_popup.setAttribute("class", "close-popup");
-close_popup.src = "/img/icon.png";
-popup.appendChild(close_popup);
-let desc = document.createElement("div");
-desc.textContent = "You Don't Know JS Yet: Get Started<br>It seems like there's never been as much widespread desire before for a better way to deeply learn the fundamentals of JavaScript. But with a million blogs, books, and videos out there, just where do you START? Look no further!";
-popup.appendChild(desc);
+    let popup = document.createElement('div')
+    popup.id = id
+    popup.classList.add('show-more-popup')
 
+    let showMoreBody = document.createElement('div')
+    showMoreBody.classList.add('show-more-body')
 
+    let closeBtn = document.createElement('div')
+    closeBtn.classList.add('show-more-close')
 
-let popupBg = document.querySelector('.popup_bg');
-let popup1 = document.querySelector('.popup');
-let openPopupButtons = document.querySelectorAll('.open-popup');
-let closePopupButton = document.querySelector('.close-popup');
+    let showMoreTitle = document.createElement('p')
+    showMoreTitle.textContent = title
 
-openPopupButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        popupBg.classList.add('active');
-        popup1.classList.add('active');
+    let showMoreText = document.createElement('p')
+    showMoreText.textContent = description
+
+    showMoreBody.appendChild(closeBtn)
+    showMoreBody.appendChild(showMoreTitle)
+    showMoreBody.appendChild(showMoreText)
+    popup.appendChild(showMoreBody)
+    showMoreBtn.appendChild(popup)
+
+    showMoreBtn.addEventListener('click', e => {
+        if (e.target === showMoreBtn) {
+            let body = document.getElementById(id)
+            body.classList.toggle('active')
+        }
     })
-});
 
-closePopupButton.addEventListener('click',(e) => {
-    e.stopPropagation()
-    popupBg.classList.remove('active');
-    popup1.classList.remove('active');
-});
+    closeBtn.addEventListener('click', e => {
+        e.stopPropagation()
+        let body = document.getElementById(id)
+        body.classList.remove('active')
+    })
 
-document.addEventListener('click', (e) => {
-    if(e.target === popupBg) {
-        popupBg.classList.remove('active');
-        popup.classList.remove('active');
-    }
-});
+    return showMoreBtn
+}
+
+
+
+
+
+
 
 
 
