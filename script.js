@@ -20,7 +20,7 @@ body.appendChild(line);
 //body.getElementsByClassName('first')[0].style = "margin-left: 600px; font-size: 24px; font-style: bold";
 let img1 = document.createElement('img');
 img1.setAttribute('class', 'book_img');
-img1.src = "/img/pexels-pixabay-159711.jpg";
+img1.src = "img/pexels-pixabay-159711.jpg";
 body.appendChild(img1);
 
 
