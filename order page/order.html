@@ -31,7 +31,7 @@
 			</div>
 			<div class="input_field">
 				<label>Flat number: </label>
-				<input type="number" min="1" class="input" placeholder=" " pattern="^[0-9,-]" required>
+				<input class="input" pattern="^([^-]|[0-9])[0-9-]*" required>
 			</div>
 			</div>
 			<div class="radios">
@@ -56,8 +56,9 @@
 				</div>
 			</div>
 			<div class="inputfield">
-				<input type="submit" value="Complete" class="btn">
+				<input type="submit" value="Complete" class="btn1">
 			</div>
 		</div>
+		<script src="order.js"></script>
 </body>
 </html>

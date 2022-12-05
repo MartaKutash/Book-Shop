@@ -35,16 +35,15 @@ hr {
 
 .order {
 	font-size: 24px;
-	margin-left: 200px;
+	margin-left: 5px;
 	font-style: oblique;
 	font-weight: bold;
 }
 
 .whatordered {
-	border: 5px solid green;
 	width: 250px;
 	height: 250px;
-	margin-left: 130px;
+	margin-left: 30px;
 }
 
 #submit {
@@ -201,7 +200,7 @@ hr {
 .delete_item {
 	position: absolute;
 	margin-top: 50px;
-	margin-left: 110px;
+	margin-left: -200px;
 }
 
 .plus_button {
@@ -221,6 +220,7 @@ hr {
 	margin-left: -200px;
 	margin-top: 50px;
 }
+
 
 
 
