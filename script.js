@@ -105,6 +105,7 @@ fetch('books.json') //path to the file with json data
 			let image = document.createElement("img");
 			image.setAttribute('class', 'img-self' )
             image.src = data[key].imageLink;
+            console.log(data[key].imageLink)
             bookItem.appendChild(image)
             let title = document.createElement("div");
 			title.setAttribute('class', 'title-self')
