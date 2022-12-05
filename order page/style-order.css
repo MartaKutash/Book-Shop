@@ -34,7 +34,7 @@ input {
 	border-color: red;
 }
 
-.btn1 {
+#btn1 {
 	position: absolute;
 	background-color: rgb(7, 194, 178);
 	color: white;
@@ -42,6 +42,7 @@ input {
 	width: 130px;
 	height: 50px;
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 .input_group {
