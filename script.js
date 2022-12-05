@@ -17,7 +17,6 @@ firstdParagraph.innerText = "Welcome to the BookShop!";
 let line = document.createElement('hr');
 body.appendChild(line);
 
-//body.getElementsByClassName('first')[0].style = "margin-left: 600px; font-size: 24px; font-style: bold";
 let img1 = document.createElement('img');
 img1.setAttribute('class', 'book_img');
 img1.src = "img/pexels-pixabay-159711.jpg";
@@ -39,34 +38,12 @@ if(galyasBag.length !== 0) {
 }
 orderForm.appendChild(yourPurchase)
 
-/*let delete_item_button = document.createElement('button');
-delete_item_button.setAttribute('class', 'delete_item');
-delete_item_button.textContent = "x";
-orderForm.appendChild(delete_item_button);
-delete_item_button.onclick = function(item) {
-   bag.remove(item);
-}*/
 
 let total_price = document.createElement("div")
-//total_price.id = 'total-price'
+
 orderFormBox.appendChild(total_price)
 total_price.setAttribute('class', 'tot_price');
-//total_price.textContent = " ";
 
-/*let plus_item_button = document.createElement('button');
-plus_item_button.setAttribute('class', 'plus_button');
-plus_item_button.textContent = "+";
-orderForm.appendChild(plus_item_button);
-
-let minus_item_button = document.createElement('button');
-minus_item_button.setAttribute('class', 'minus_button');
-minus_item_button.textContent = "-";
-orderForm.appendChild(minus_item_button);*/
-
-let bag = document.createElement('array');
-bag.setAttribute('id', 'bag');
-bag.textContent = "";
-orderForm.appendChild(bag);
 
 
 let boxWithOrder = document.createElement('div');
@@ -87,7 +64,7 @@ orderFormBox.appendChild(butt);
 let listOfBooks = document.createElement("div")
 body.appendChild(listOfBooks)
 listOfBooks.setAttribute('id', 'book_list')
-fetch('books.json') //path to the file with json data
+fetch('books.json')
     .then(response => {
         return response.json();
     })
